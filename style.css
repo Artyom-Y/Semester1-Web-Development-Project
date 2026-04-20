@@ -1,0 +1,185 @@
+/*Fonts (Syncopate downloaded from Google Fonts, Spleen downloaded from https://github.com/fcambus/spleen*/
+@font-face {
+    font-family: "Syncopate-Regular";
+    src: url("fonts/Syncopate-Regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Syncopate-Bold";
+    src: url("fonts/Syncopate-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Spleen";
+    src: url("fonts/spleen-16x32.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: "Syncopate-Bold";
+}
+
+h2 {
+    font-family: "Syncopate-Regular";
+    font-size: medium;
+}
+
+p {
+    font-family: "Spleen";
+    font-size: larger;
+}
+
+a {
+    font-family: "Spleen";
+    font-size: larger;
+}
+
+/*Layout configuration and styling (ordered by their appearence in html, otherwise its confusing)*/
+
+/*I'm using this because it's a common practice to ensure that everything is sized correctly*/
+* {
+  box-sizing: border-box;
+}
+
+.basic_style{ /*Some elements override these properties, but it's still handy to have them in one class*/
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 2px dashed #767c81;
+    opacity: 0.9;
+    padding: 20px;
+}
+
+body {
+    background: url(media/background.jpg);
+    background-size: 100vw 100vh; /*Using cover would make more sense here, but then I can't fetch background's resolution*/
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #f1f1f15e;
+    border-radius: 5px;
+    border: 2px solid #767c81;
+    padding: 5px;
+}
+
+/*row 1*/
+#main_container { 
+    display: flex;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+#sidebar {
+    flex: 1;
+    padding: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar a {
+    cursor: pointer;
+    user-select: none; /*It's annoying when elements get accidentally highlighted*/
+}
+
+#sidebar #audio_ui {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    font-size: x-large;
+}
+
+#sidebar audio {
+    display: none;
+}
+
+#sidebar video {
+    width: 80px;
+    height: 40px;
+}
+
+#latest {
+    flex: 4;
+    padding: 20px 50px 20px 20px;
+}
+
+/*row 2*/
+#second_container {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+#contacts {
+    flex: 1;
+}
+
+#contacts p:hover{
+    text-decoration: underline;
+}
+
+#contacts img {
+    height: 20%;
+    width: fit-content;
+}
+
+#my_tastes {
+    flex: 5;
+}
+
+#slideshow{
+    flex: 4;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 5px;
+    opacity: 1;
+}
+
+#slideshow #prev_slide, #slideshow #next_slide {
+    height: auto;
+    font-family: "Spleen";
+    font-size: larger;
+    cursor: pointer;
+    user-select: none;
+}
+
+#slideshow #display {
+    width: 50%;
+    object-fit: contain;
+}
+
+footer {
+    color: #f1f1f1;
+    font-size: smaller;
+}
+
+/*Make website column-based if the screen is phone/tablet*/
+@media (max-width: 1024px) {
+    header {
+        text-align: center;
+        font-size: 2.5vw;
+    }
+    
+    #background {
+        background-size: auto;
+        background-position: center center;
+    }
+
+    #main_container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #second_container{
+        flex-direction: column;
+    }
+}

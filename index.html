@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>State of the Artem</title>
+    </head>
+
+    <body id="background"> <!--Structure: header/div-flex(sidebar-flex/article)/div-flex(contacts/interests/slideshow-flex)/footer-->
+        <header><h1 id="title_date">Welcome//</h1></header>
+
+        <div id="main_container">
+            <nav class="basic_style" id="sidebar">
+                <ul>
+                    <li><h2>Navigation</h2></li>
+                    <li><a class="link" data-title="My stuff"></a></li>
+                    <li><a class="link" data-title="Blog"></a></li>
+                    <li><a class="link" data-title="Misc"></a></li>
+                    <li><audio id="player" preload="auto" loop="loop" src="media/music.mp3"></audio></li> <!--This is where the audio is stored-->
+                    <li id="audio_ui"><a id="player_control" data-switch="off">&#x23F5;</a><video preload="auto" autoplay loop="loop" id="player_anim"><source src="media/player_anim.mp4" type="video/mp4"></video></li> <!--This is what we use to play the audio and display little animation-->
+                </ul>
+            </nav>
+
+            <article class="basic_style" id="latest">
+                <h2>About</h2>
+                <p>This website was made as a webdev assignment for my university. I'm a computer science bachelor staying in France, who likes music, videogames, art and more. I know basics of 3d modeling, programming plus a bit of game design. Ah and the languages I speak are Russian and English</p>
+            </article>
+        </div>
+
+        <div id="second_container">
+            <article class="basic_style" id="contacts">
+                <h2>Contact me</h2>
+                <p>•artem@email.fr</p>
+                <p>•+33123456789</p>
+                <img src="media/cat-computer.gif" alt="gif of cat working on computer">
+            </article>
+
+            <article class="basic_style" id="my_tastes">
+                <h2>Some media I like</h2>
+                <p>>>Artists: Daisuke Ishiwatari, Ohkubo Atsushi, Yoji Shinkawa</p>
+                <p>>>Music: Gorillaz, Aphex Twin, Hideki Naganuma (out of many more)</p>
+                <p>>>Videogames: Splatoon, Yume Nikki, Portal 2</p>
+            </article>
+
+            <div class="basic_style" id="slideshow">
+                <button id="prev_slide">Prev</button>
+                <img id="display" src="media/image0.jpg" alt="Slideshow with things I like"> <!--src attribute gets overriden by Javascript-->
+                <button id="next_slide">Next</button>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Background by Rafael de Nadai (Unsplash), Music by Kevin MacLeod</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
